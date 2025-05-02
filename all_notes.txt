@@ -1,0 +1,54 @@
+======================================================= git lessons =======================================================
+
+==> Barýþ Arslan https://www.youtube.com/watch?v=2edt3CUrtgM&list=PLPrHLaayVkhnNstGIzQcxxnj6VYvsHBHy&index=4
+
+# Those codes are going to use Bash command prompts for Linux operating system, other os use the same way we will do.
+
+- git config --global user.name name ( configurate the name of github name for git )
+- git config --global user.email name ( configurate the name of github name for git )
+( to check out codes run them )
+
+# To make a directory a git project, after entering the directory type
+
+- git init ( provide to upload .git file )
+
+# To upload files to the git project type
+
+- git add directory_line ( for e.g. git add . ; adds all file to the staging area. )
+
+# To add files from the stage area to git repo type
+
+- git commit -m "commit_name" ( -m parameters refers to --mesage parameter, easy to understand. )
+
+# To list commits type
+
+- git log ( lists all commits, includes datetime, commit message, author and author email. )
+
+# To see changes in git projects type
+
+- git status ( shows tracked files, their information and so ever.. )
+
+# To see modified changes in files type
+
+- git diff ( shows difference made on files, they are seen as green when added, as red when deleted. )
+
+- git diff => lists all differences,
+
+- git diff filename => list filename differences
+
+  -- if no difference are available git diff does not return anything ( shows difference between git repository and working area )
+
+  -- to show difference between staging area and git repository type git diff --staged
+
+# To remove a file from working area type
+
+- git rm filename ( delete the file, logs to status. )
+
+# To remove a directory type
+
+- git rm -r directory_pathway ( -r parameter means recursively, delete files and then delete directory by itself. )
+
+
+
+
+ 
