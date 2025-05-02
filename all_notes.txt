@@ -64,6 +64,35 @@
 
 - git checkout <commithas> -- . ( most of time using dot after typing -- is ok, instead of using dot, specified filename can be written if it is known in related version )
 
+# To send files to github first of all we need to configure github repo, to do that
+
+- git remote add <remotename> <githublink>
+
+ after doing that, to send files type
+
+- git push -u <remotename> <branchname> ( -u refers all files )
+
+## Not to observe files that are in project use .gitignore file. Just type filenames into it.
+
+# To change branch type
+
+- git chechout originbranchname ( branchs are needed to created by github. E.G. branchname1 -> originbranchname )
+
+# To create bracnh type
+
+- git branch branchname
+
+# To see branchs type
+
+- git branch --all
+
+# To see differences branchs type
+
+- git diff branchname1 branchname2 ( shows diffs branchname1 branchname2 )
+
+# To merge branchs type
+
+- git merge branchname2 ( merges branchname2 to branchname1 )
 
 
 
