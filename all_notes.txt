@@ -48,6 +48,22 @@
 
 - git rm -r directory_pathway ( -r parameter means recursively, delete files and then delete directory by itself. )
 
+# To move a file to another directory or rename a file type 
+
+- git mv filename directory_name, git mv filename1 filename2 
+
+# To take back a modification from your working area type
+
+- git checkout -- filename 
+
+# To take back a modification thats applied git add command type
+
+- git reset HEAD filename
+
+# To change version, type
+
+- git checkout <commithas> -- . ( most of time using dot after typing -- is ok, instead of using dot, specified filename can be written if it is known in related version )
+
 
 
 
