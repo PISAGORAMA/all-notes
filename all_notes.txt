@@ -95,5 +95,36 @@
 - git merge branchname2 ( merges branchname2 to branchname1 )
 
 
+======================================================= Creating venv in Python =======================================================
+
+# Execute the following codeline;
+
+- python -m venv venv
+
+# To read libraries into the project execute;
+
+- .\venv\Scripts\activate
+
+
+======================================================= Moderating a project in Python =======================================================
+
+# After finishing the project, we must create requirements.txt to show up modul list in project file. To do that
+
+- pip freeze > requirements.txt 
+
+# must be executed. To eliminate unneccessary modul files pipreqs can help us;
+
+- pip install pipreqs ( pipreqs helps us to edit requirements.txt file easily. )
+
+- pipreqs . --force ( pipreqs reads moduls into a directory and rewrite requirements.txt file into it. )
+
+# To summarize everything, I suggest to use pipreqs to build requirements.txt, otherwise just pip freeze > requirements.txt and build your project anyway.
+
+
+
+
+
+
+
 
  
