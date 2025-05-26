@@ -120,6 +120,26 @@
 
 # To summarize everything, I suggest to use pipreqs to build requirements.txt, otherwise just pip freeze > requirements.txt and build your project anyway.
 
+( Do not forget to use docstring to set commands in your classes, functions, scripts. )
+
+- Usage of docstring in python:
+
+"""
+
+blablabla comment
+
+
+"""
+
+======================================================= Excel =======================================================
+
+# To select all the table cells, 
+
+- ctrl + shift (downside arrow) and after doing that ctrl + shift (rightside arrow)
+
+
+
+
 
 
 
