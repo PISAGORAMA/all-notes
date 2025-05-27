@@ -1,36 +1,62 @@
 import itertools
-from collections import defaultdict
 
 class mathNotes:
     """
     This class is used to note all the mathematical notes by Eren.
     
-    Returns:
-        _type_: _description_
     """
     class apriori:
+        """
+        This class implements the Apriori algorithm for association rule learning.
+        It calculates the support of itemsets in a list of transactions.
+        Args: liste: list of transactions, where each transaction is a dictionary with items as values.
+        Returns:
+            An instance of the apriori class with methods to get the list, calculate support, and show itemsets.
+        """
         def __init__(self, liste:list):
             self.liste = liste
+            """
+            Taking a list of transactions, where each transaction is a dictionary with items as values.
+            """
             
         def get_list(self):
+            """
+
+                list: The list of transactions.
+            """
             return self.liste
+            
+        
         
         def support(self, *args):
+            """
+            Calculate the support of an itemset in the transactions.
+            Args:
+                *args: Items to check support for.
+            """
             instance = 0
-            len_of_the_values = 0
             wanted_set = set(args)
             for transaction in self.liste:
                 for items in transaction.values():
-                    len_of_the_values += len(transaction.values())# veya doğrudan transaction.values() bir listeyse
                     if set(items).issuperset(wanted_set):
                         instance += 1
-            return instance / len_of_the_values
+            return instance / len(self.liste)
         
-        def show_list(self, confidence:float = 0.25):
-            print(self.support(self.itercomb(self.liste)))
-            return self.support(self.itercomb(self.liste))
+        def show_list(self, confidence: float = 0.25):
+            """
+            Show the itemsets and their support from the transactions.
+            """
+            for komb in self.itercomb(self.liste):
+                s = self.support(*komb)
+                print(f"Itemset: {sorted(komb)}, Support: {s:.2f}")
         
         def itercomb(self, iter_list:list):
+            """
+            Secondary function to iterate through combinations of items in the transactions.
+            Args:
+                iter_list: List of transactions, where each transaction is a dictionary with items as values.
+            
+            """
             bos_Set = set()
             bos_set_exact = set()
 
@@ -43,31 +69,23 @@ class mathNotes:
                 for c in combination:
                     bos_set_exact.add(c)
                     
-            return set(bos_set_exact)
-
-        
-        
-            
+            return bos_set_exact 
      
-new_instance = mathNotes.apriori([{"Fiş1": ["Elma", "Armut", "Soğan"]}, {"Fiş2": {"Elma", "Armut", "Soğan"}}])
-#print(new_instance.get_list())  # Output: {'key1': 'value1', 'key2': 'value2'}
-            
-new_list = new_instance.get_list()
+new_instance = mathNotes.apriori([{"Fiş1": ["Ekmek", "Süt", "Yumurta"]},
+    {"Fiş2": ["Süt", "Kahve", "Şeker"]},
+    {"Fiş3": ["Ekmek", "Yumurta", "Tereyağı"]},
+    {"Fiş4": ["Kahve", "Süt", "Çikolata", "Bisküvi"]},
+    {"Fiş5": ["Ekmek", "Çikolata"]},
+    {"Fiş6": ["Yumurta", "Süt", "Bisküvi"]},
+    {"Fiş7": ["Ekmek", "Kahve"]},
+    {"Fiş8": ["Tereyağı", "Bal", "Süt"]},
+    {"Fiş9": ["Bisküvi", "Çikolata", "Kahve"]},
+    {"Fiş10": ["Yumurta", "Süt", "Kahve", "Ekmek"]}])
 
-# for j in range(len(new_instance.liste)):
-#     print(new_instance.liste[j])  # Print each key in the dictionary
-#     print(new_instance.liste[j].items())  # Print each key-value pair in the dictionary
-#     print(new_instance.liste[j].keys())  # Print each key in the dictionary
-#     print(new_instance.liste[j].values())  # Print each value in the dictionary
-#     print(new_instance.support("Elma", "Armut", "b"))  # Calculate support for "Elma"
-#     print(new_instance.support("Armut"))  # Calculate support for "Armut"
-#     print(new_instance.support("a"))  # Calculate support for "Soğan"
-    
-#print(new_instance.support("Elma"))  # Show the list with confidence 0.25
-print(new_instance.itercomb(new_instance.liste))  # Show the list with confidence 0.25
-print(new_instance.show_list(0.25))  # Show the list with confidence 0.25
+new_instance.show_list(confidence=0.25)
+print(new_instance.get_list())
 
-#print(list([{"Fiş1": ["Elma", "Armut", "Soğan"]}, {"Fiş2": {"Elma", "Armut", "Soğan"}}][0].values())[0])  # Access the first dictionary's values
+
 
 
 
